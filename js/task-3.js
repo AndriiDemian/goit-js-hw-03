@@ -1,20 +1,18 @@
-function makeArray(firstArray, secondArray, maxLength) {
-    const newArray = firstArray.concat(secondArray);
+function filterArray(numbers, value) {
+    const result = [];
   
-    if (maxLength > 0) {
-      return newArray.slice(0, maxLength);
-    } else {
-      return [];
+    for (let i = 0; i < numbers.length; i += 1) {
+      if (numbers[i] > value) {
+        result.push(numbers[i]);
+      }
     }
-}
+  
+    return result;
+  }
 
-
-
-// function makeArray(firstArray, secondArray, maxLength) {
-//   const newArray = firstArray.concat(secondArray);
-//   return maxLength > 0 ? newArray.slice(0, maxLength) : [];
+// function filterArray(numbers, value) {
+//   return numbers.filter(number => number > value);
 // }
-
 
 console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
 console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
